@@ -1,0 +1,32 @@
+window:
+  opacity: 0.9
+
+font:
+  normal:
+    family: FiraCode Nerd Font
+
+colors:
+  primary:
+    background: '#000431'
+    foreground: '#bdd0fa'
+  cursor:
+    text: CellBackground
+    cursor: CellForeground
+  normal:
+    black:   '#02063d'
+    red:     '#993333'
+    green:   '#339933'
+    yellow:  '#999933'
+    blue:    '#333399'
+    magenta: '#993399'
+    cyan:    '#339999'
+    white:   '#999999'
+  bright:
+    black:   '#064d90'
+    red:     '#cc6666'
+    green:   '#66cc66'
+    yellow:  '#cccc66'
+    blue:    '#6666cc'
+    magenta: '#cc66cc'
+    cyan:    '#66cccc'
+    white:   '#dddddd'
