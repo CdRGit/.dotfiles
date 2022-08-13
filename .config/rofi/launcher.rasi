@@ -1,0 +1,10 @@
+@theme "base.rasi"
+
+configuration {
+    display-drun:   			    " ";
+    drun-display-format:            "{name}";
+}
+
+entry {
+    placeholder:                    "Launch...";
+}

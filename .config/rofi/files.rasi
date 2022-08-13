@@ -1,0 +1,10 @@
+@theme "base.rasi"
+
+configuration {
+    display-filebrowser: 			    " ";
+    filebrowser-display-format:         "{name}";
+}
+
+entry {
+    placeholder:                    "Search...";
+}

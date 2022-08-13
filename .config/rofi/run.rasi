@@ -1,0 +1,10 @@
+@theme "base.rasi"
+
+configuration {
+    display-run:     			    " ";
+    run-display-format:             "{name}";
+}
+
+entry {
+    placeholder:                    "Run...";
+}

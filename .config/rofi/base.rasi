@@ -1,0 +1,120 @@
+configuration {
+	font:							"FiraCode Nerd Font 10";
+    show-icons:                     true;
+
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+}
+
+@import "colors.rasi"
+
+window {
+    transparency:                   "real";
+    background-color:               @bg;
+    text-color:                     @fg;
+	border:							0px;
+	border-color:					@ac;
+    border-radius:                  0px;
+	width:							1000px;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+    enabled: 						true;
+	padding: 						-5px 5px -5px -5px;
+	background-color: 				@al;
+	text-color: 					@bar;
+	font:							"FiraCode Nerd Font 18";
+}
+
+entry {
+    background-color:               @al;
+    text-color:                     @fg;
+    placeholder-color:              @bar;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "[CONFIGURE PROPERLY]";
+    padding:                        1px;
+    blink:                          true;
+}
+
+inputbar {
+	children: 						[ prompt, entry ];
+    background-color:               @bga;
+    text-color:                     @bar;
+    expand:                         false;
+	border:							0px 0px 1px 0px;
+    border-radius:                  0px;
+	border-color:					@ac;
+    margin:                         0px;
+    padding:                        15px 0px 12px 25px;
+}
+
+message {
+    border: 0 0 1px 0;
+    border-color: @ac;
+    background-color: @bga;
+    padding: 15px 0px 12px 25px;
+}
+
+textbox {
+    background-color: @al;
+    text-color: @fg;
+    placeholder: "[CONFIGURE PROPERLY]";
+}
+
+listview {
+    background-color:               @al;
+    padding:                        10px 10px 10px 10px;
+    columns:                        3;
+    lines:                          10;
+    spacing:                        5px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @al;
+	border:							1px;
+    border-radius:                  0px;
+	border-color:					@ac;
+    children:                       [ inputbar, message, listview ];
+    spacing:                       	0px;
+    padding:                        0px;
+}
+
+element {
+    background-color:               @al;
+    text-color:                     @fg;
+    orientation:                    horizontal;
+    border-radius:                  0px;
+    padding:                        10px;
+}
+
+element-icon {
+    size:                           24px;
+    border:                         0px;
+    background-color:               @al;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    margin:                         0px 2.5px 0px 2.5px;
+    background-color:               @al;
+    text-color:                     @fg;
+}
+
+element selected {
+    background-color:               @bga;
+    text-color:                     @bg;
+	border:							1px;
+    border-radius:                  0px;
+    border-color:                  	@ac;
+}

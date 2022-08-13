@@ -1,0 +1,11 @@
+@theme "base.rasi"
+
+configuration {
+    display-calc:                   "";
+    calc-display-format:            "{name}";
+    calc-hint-result:               "= ";
+}
+
+entry {
+    placeholder:                    "Calculate...";
+}

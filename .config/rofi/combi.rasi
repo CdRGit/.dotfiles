@@ -1,0 +1,11 @@
+@theme "base.rasi"
+
+configuration {
+    combi-modi: "window,drun";
+    display-combi: 			    "";
+    display-format:         "{name}";
+}
+
+entry {
+    placeholder:                    "...";
+}
