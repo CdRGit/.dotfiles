@@ -1,0 +1,60 @@
+#! /bin/sh
+
+killall -q dunst
+
+dunst -conf $HOME/.config/dunst/dunst.conf &
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# setup tablet (?)
+# id might change so if it doesn't work I have to figure out how to do this better
+xsetwacom set 13 MapToOutput DisplayPort-2
+
+setxkbmap -option compose:rwin
+
+feh --bg-scale ~/main_monitor_background.jpg ~/second_monitor_background.jpg
+
+picom --config $HOME/.config/picom/picom.conf &
+
+$HOME/.config/polybar/launch.sh &
+
+# bspc monitor -d I II III IV V VI VII VIII IX X
+# DP-3 with OSS
+# DisplayPort-2 with amdgpu
+bspc monitor DisplayPort-2 -d Main Secondary Tertiary Chat Email
+# HDMI-1 with OSS
+# HDMI-A-0 with amdgpu
+bspc monitor HDMI-A-0 -d Video Docs Browser 9 0
+
+bspc config border_width         2
+bspc config border_radius        5
+bspc config window_gap           4
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# polybar colors
+# background = #010a42
+# background-alt = #042785
+# foreground = #bdd0fa
+# primary = #35d3a3
+# secondary = #db01f8
+# alert = #d900f8
+# disabled = #2052cb
+
+bspc config normal_border_color   "#2052cb"
+bspc config active_border_color   "#bdd0fa"
+bspc config focused_border_color  "#35d3a3"
+bspc config presel_feedback_color "#db01f8"
+
+# rules
+
+bspc rule -a discord desktop=^4 follow=off
+bspc rule -a Thunderbird desktop=^5 follow=off
+bspc rule -a mpv desktop=^6 follow=off state=monocle state=fullscreen
+
+bspc rule -a Alacritty:dropdown sticky=on state=floating hidden=on
+if [ -z $(xdotool search --name dropdown) ]
+then
+    alacritty --class dropdown -t dropdown &
+fi
